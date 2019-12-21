@@ -7,7 +7,7 @@
     "datasetNamespaceCoupling" : "./datasets/DrToolsMetric/drtools-metric-coupling.csv",
     "datasetNamespaces" : "./datasets/DrToolsMetric/drtools-metric-namespaces.csv",
     "datasetTypes" : "./datasets/DrToolsMetric/drtools-metric-types.csv",
-    "datasetMethods" : "./datasets/DrToolsMetric/drtools-metric-methods.csv",
+    "datasetMethods" : "./datasets/DrToolsMetric/drtools-metric-methods-top60.csv",
     "datasetInternalTypeDependencies" : "./datasets/DrToolsMetric/drtools-metric-internal-dependencies.json",
     "datasetInternalDependencies" : "./datasets/DrToolsMetric/drtools-metric-internal-dependencies.json"
 };*/
@@ -24,6 +24,7 @@
     //"datasetTypes" : "./datasets/Pathfinder/drtools-metric-types.csv",
     "datasetMethods" : "./datasets/Pathfinder/drtools-metric-methodsTop30.csv",
     //"datasetMethods" : "./datasets/Pathfinder/drtools-metric-methods.csv",
+    "datasetInternalTypeDependencies" : "./datasets/JDepend/drtools-metric-internal-dependencies.json", 
     "datasetInternalDependencies" : "./datasets/Pathfinder/drtools-metric-internal-dependencies.json",
 };*/
 
@@ -35,12 +36,27 @@ var optionsProject = {
     "datasetResonance" : "./datasets/FindBugs/drtools-metric-resonance.json",
     "datasetNamespaceCoupling" : "./datasets/FindBugs/drtools-metric-coupling.csv",
     "datasetNamespaces" : "./datasets/FindBugs/drtools-metric-namespaces.csv",
-    "datasetTypes" : "./datasets/Pathfinder/drtools-metric-types.csv",
-    "datasetMethods" : "./datasets/Pathfinder/drtools-metric-methods.csv",
+    "datasetTypes" : "./datasets/FindBugs/drtools-metric-types-top40.csv",
+    "datasetMethods" : "./datasets/FindBugs/drtools-metric-methods-top40.csv",
     "datasetInternalTypeDependencies" : "", 
     "datasetInternalDependencies" : "./datasets/FindBugs/drtools-metric-internal-dependenciesTop40.json",
     "datasetCyclicDependencies" : "./datasets/FindBugs/drtools-metric-cyclic-dependencies.csv"
 };
+
+// Project: JDepend
+/*var optionsProject = {
+    "projectName" : "JDepend",
+    "datasetDir": "./datasets/JDepend/",
+    "datasetSummary" : "./datasets/JDepend/drtools-metric-summary.csv",
+    "datasetResonance" : "./datasets/JDepend/drtools-metric-resonance.json",
+    "datasetNamespaceCoupling" : "./datasets/JDepend/drtools-metric-namespace-coupling.csv",
+    "datasetNamespaces" : "./datasets/JDepend/drtools-metric-namespaces.csv",
+    "datasetTypes" : "./datasets/JDepend/drtools-metric-types.csv",
+    "datasetMethods" : "./datasets/JDepend/drtools-metric-methods.csv",
+    "datasetInternalTypeDependencies" : "./datasets/JDepend/drtools-metric-internal-dependencies.json", 
+    "datasetInternalDependencies" : "./datasets/JDepend/drtools-metric-internal-dependencies.json",
+    "datasetCyclicDependencies" : ""
+};*/
 
 // Titles
 var graphTitles = {
