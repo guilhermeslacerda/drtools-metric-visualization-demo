@@ -75,10 +75,10 @@ var graphTitles = {
     "titleNamespaceCouplingExplanation" : "CA (Afferent Coupling) and CE (Efferent Coupling)",
 
     "titleType" : "Type Visualization",
-    "titleTypeExplanation" : "Types with Number of Methods/Functions (NOM - y axis), Lines of Code (SLOC - x axis), Complexity (WMC - bubble color), and Dependencies (DEP - bubble size)",
+    "titleTypeExplanation" : "Types with Number of Methods/Functions (NOM - y-axis), Lines of Code (SLOC - x-axis), Complexity (WMC - bubble color), and Dependencies (DEP - bubble size)",
 
     "titleMethod" : "Method Visualization",
-    "titleMethodExplanation" : "Methods with Complexity (CYCLO - y axis), Lines of Code (MLOC - x axis), Number of Invocations (CALLS - bubble color), and Nested Block Depth (NBD - bubble size)",
+    "titleMethodExplanation" : "Methods with Complexity (CYCLO - y-axis), Lines of Code (MLOC - x-axis), Number of Invocations (CALLS - bubble color), and Nested Block Depth (NBD - bubble size)",
 
     "titleInternalDependencies" : "Internal Dependencies Visualization",
     "titleInternalDependenciesExplanation" : "Internal dependencies between type/classes",
@@ -87,12 +87,12 @@ var graphTitles = {
     "titleTypeCoupling1Explanation" : "Red lines (output coupling) and green lines (input coupling)",
 
     "titleTypeCoupling2" : "Type Coupling Visualization",
-    "titleTypeCoupling2Explanation" : "Types with I-DEP (y axis), DEP (x axis), FAN-IN (bubble color), and FAN-OUT (bubble size)",
+    "titleTypeCoupling2Explanation" : "Types with I-DEP (y-axis), DEP (x-axis), FAN-IN (bubble color), and FAN-OUT (bubble size)",
 
     "titleThresholds" : "Metric Thresholds Information",
 
     "titleInstability" : "Instability and Abstractness Visualization",
-    "titleInstabilityExplanation" : "Abstractness degree (y axis) and Instability (x axis)",
+    "titleInstabilityExplanation" : "Abstractness degree (y-axis) and Instability (x-axis)",
 
     "titleCyclicDependencies" : "Cyclic Dependencies Visualization",
     "titleCyclicDependenciesExplanation" : "Cyclic dependencies between type/classes"
