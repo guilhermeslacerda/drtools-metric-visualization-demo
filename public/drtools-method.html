@@ -35,7 +35,7 @@
       }
     </style>
 </head>
-<body>
+<body class="text-center">
   <section class="ftco-section" id="header-section">
     <div class="col-md-12 text-center heading-section ftco-animate">
       <h2 class="mb-4"><script>document.write(graphTitles.titleMethod)</script></h2>
@@ -49,8 +49,22 @@
     </div>
     <div class="text">
         <strong class="text-error"><div id="errorMessage"></div></strong>
-    </div>			    
-  </section>
+    </div>
+    <div class="text">
+      <table>
+        <tr>
+          <td><div class="mr-sm-2" id="filterCYCLO" style="padding-left: 50px"></div></td>
+          <td><div class="mr-sm-2" id="filterMLOC"></div></td>
+        </tr>
+        <tr>
+          <td><div class="mr-sm-2" id="filterCALLS" style="padding-left: 50px"></div></td>
+          <td><div class="mr-sm-2" id="filterNBD"></div></td>
+        </tr>
+      </table>
+      <div id="chart_div"></div>
+      <div id="dashboard_div"></div>
+    </div>            
+</section>
 
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
 <script src="js/popper.min.js"></script>
@@ -70,40 +84,93 @@ if (!optionsProject.datasetMethods || 0 === optionsProject.datasetMethods.length
   $("#errorMessage").text(errorMessage.msgMethods)
 }
 else {
-      google.charts.load('current', {
-        'packages': ['corechart']
-      });
+    google.charts.load('current', {'packages':['corechart', 'controls']});
+    google.charts.setOnLoadCallback(drawVisualization);
 
   function drawVisualization() {
-   $.get(optionsProject.datasetMethods, function(csvString) {
+    var dashboard = new google.visualization.Dashboard(
+        document.getElementById('dashboard_div'));
+
+    $.get(optionsProject.datasetMethods, function(csvString) {
       var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
       var data = new google.visualization.arrayToDataTable(arrayData);
-      var options = {
-          hAxis: {
-            title: 'loc'
-          },
-          vAxis: {
-            title: 'cyclo'
-          },
-          bubble: {
-            textStyle: {
-              fontName: 'Poppins',              
-              fontSize: 11
+      console.log(data);
+
+          var sliderCYCLO = new google.visualization.ControlWrapper({
+            'controlType': 'NumberRangeFilter',
+            'containerId': 'filterCYCLO',
+            'options': {
+              'filterColumnIndex': 2,
+              'ui': {
+                'labelStacking': 'horizontal',
+                'label': 'Ciclomatic Complexity (CYCLO)'
+              }
             }
-          },
-          colorAxis: {colors: ['yellow', 'red']}
-        };
+          });
 
-        var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
-        chart.draw(data, options);
-   });    
+          var sliderMLOC = new google.visualization.ControlWrapper({
+            'controlType': 'NumberRangeFilter',
+            'containerId': 'filterMLOC',
+            'options': {
+              'filterColumnIndex': 1,
+              'ui': {
+                'labelStacking': 'horizontal',
+                'label': 'Lines of Code (MLOC)'
+              }
+            }
+          });
 
+          var sliderCALLS = new google.visualization.ControlWrapper({
+            'controlType': 'NumberRangeFilter',
+            'containerId': 'filterCALLS',
+            'options': {
+              'filterColumnIndex': 3,
+              'ui': {
+                'labelStacking': 'horizontal',
+                'label': 'Invocations (CALLS)'
+              }
+            }
+          });
+
+          var sliderNBD = new google.visualization.ControlWrapper({
+            'controlType': 'NumberRangeFilter',
+            'containerId': 'filterNBD',
+            'options': {
+              'filterColumnIndex': 4,
+              'ui': {
+                'labelStacking': 'horizontal',
+                'label': 'Nested Block Depth (NBD)'
+              }
+            }
+          });
+
+          var bubbleChart = new google.visualization.ChartWrapper({
+            'chartType': 'BubbleChart',
+            'containerId': 'chart_div',
+            'options': {
+              'width': 1300,
+              'height': 500,
+              'hAxis': {'title': 'loc'},
+              'vAxis': {'title': 'cyclo'},
+              'bubble': {
+                  'textStyle': {
+                    'fontName': 'Poppins',
+                    'fontSize': 11
+                  }
+               },
+               'colorAxis': {'colors': ['yellow', 'red']}
+            },
+            'view': {'columns': [0, 1, 2, 4, 5]}    
+          });
+          
+          dashboard.bind([sliderCYCLO, sliderMLOC, sliderCALLS, sliderNBD], [bubbleChart]);
+          dashboard.draw(data);
+
+     });
   }
-
-  google.setOnLoadCallback(drawVisualization);
 }
 </script>
-<div id="series_chart_div" style="width: 1500px; height: 800px;"></div>
+<div id="series_chart_div" style="width: 1300px; height: 500px;"></div>
 
 </body>
 </html>

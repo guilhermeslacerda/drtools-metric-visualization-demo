@@ -35,7 +35,7 @@
       }
     </style>
 </head>
-<body>
+<body class="text-center">
   <section class="ftco-section" id="header-section">
     <div class="col-md-12 text-center heading-section ftco-animate">
       <h2 class="mb-4"><script>document.write(graphTitles.titleNamespace)</script></h2>
@@ -49,7 +49,18 @@
     </div>
 		<div class="text">
         <strong class="text-error"><div id="errorMessage"></div></strong>
-    </div>			  
+    </div>
+    <div class="text">
+      <table>
+        <tr>
+          <td><div class="mr-sm-2" id="noc" style="padding-left: 50px"></div></td>
+          <td><div class="mr-sm-2" id="nac"></div></td>
+
+        </tr>
+      </table>
+          <div id="chart_div"></div>
+          <div id="dashboard_div"></div>
+    </div>      
   </section>
 
 <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -70,29 +81,63 @@ if (!optionsProject.datasetNamespaces || 0 === optionsProject.datasetNamespaces.
   $("#errorMessage").text(errorMessage.msgNamespaces)
 }
 else {
-  google.charts.load('current', {packages: ['corechart', 'bar']});
+  google.charts.load('current', {'packages':['corechart', 'controls']});
+  google.charts.setOnLoadCallback(drawBar);
 
   function drawBar() {
-  $.get(optionsProject.datasetNamespaces, function(csvString) {
+    var dashboard = new google.visualization.Dashboard(
+        document.getElementById('dashboard_div'));
+
+    $.get(optionsProject.datasetNamespaces, function(csvString) {
         var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
         var data = new google.visualization.arrayToDataTable(arrayData);
 
-        var options = {
-          legend: { position: 'top', maxLines: 3 },
-          bar: { groupWidth: '75%' },
-          fontName: 'Poppins',
-          isStacked: true
-        };
+        var noc = new google.visualization.ControlWrapper({
+            'controlType': 'NumberRangeFilter',
+            'containerId': 'noc',
+            'options': {
+              'filterColumnIndex': 1,              
+              'ui': {
+                'labelStacking': 'horizontal',
+                'label': 'Number of Types/Classes (NOC)'
+              }
+            }
+          });
 
-        var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+          var nac = new google.visualization.ControlWrapper({
+            'controlType': 'NumberRangeFilter',
+            'containerId': 'nac',
+            'options': {
+              'filterColumnIndex': 2,              
+              'ui': {
+                'labelStacking': 'horizontal',
+                'label': 'Number of Abstract Types/Classes (NAC)'
+              }
+            }
+          });
 
-        chart.draw(data, options);
-      });
+        var barChart = new google.visualization.ChartWrapper({
+          'chartType': 'BarChart',
+          'containerId': 'chart_div',
+          'options': {
+            'width': 1300,
+            'height': 600,
+            'legend': { 'position': 'top', 'maxLines': 3 },
+            'bar': { 'groupWidth': '75%' },
+            'isStacked': true,
+            'fontName': 'Poppins',
+            'bars': 'horizontal' 
+          },          
+          'view': {'columns': [0, 1, 2]}
+        });
 
+        dashboard.bind([noc, nac], [barChart]);
+        dashboard.draw(data);
+    }); 
   }   
   google.charts.setOnLoadCallback(drawBar);
 }
 </script>
-<div id="chart_div" style="width: 1500px; height: 700px; font-family: 'Poppins', sans-serif"></div>
+<div id="chart_div" style="width: 1300px; height: 600px; font-family: 'Poppins', sans-serif"></div>
 </body>
 </html>
