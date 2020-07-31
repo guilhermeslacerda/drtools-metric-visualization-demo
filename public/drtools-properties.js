@@ -26,7 +26,7 @@
     //"datasetTypes" : "./datasets/Pathfinder/drtools-metric-types.csv",
     "datasetMethods" : "./datasets/Pathfinder/drtools-metric-methodsTop30.csv",
     //"datasetMethods" : "./datasets/Pathfinder/drtools-metric-methods.csv",
-    "datasetInternalTypeDependencies" : "./datasets/JDepend/drtools-metric-internal-dependencies.json", 
+    "datasetInternalTypeDependencies" : "./datasets/Pathfinder/drtools-metric-internal-dependencies.json", 
     "datasetInternalDependencies" : "./datasets/Pathfinder/drtools-metric-internal-dependencies.json",
 };*/
 
@@ -40,7 +40,7 @@ var optionsProject = {
     "datasetNamespaces" : "./datasets/FindBugs/drtools-metric-namespaces.csv",
     "datasetNamespaceDependency" : "./datasets/FindBugs/drtools-metric-namespaces-dependencies.json",
     "datasetTypes" : "./datasets/FindBugs/drtools-metric-types.csv",
-    "datasetMethods" : "./datasets/FindBugs/drtools-metric-methods-Top40.csv",
+    "datasetMethods" : "./datasets/FindBugs/drtools-metric-methods-top40.csv",
     "datasetInternalTypeDependencies" : "", 
     "datasetInternalDependencies" : "./datasets/FindBugs/drtools-metric-internal-dependenciesTop40.json",
     "datasetCyclicDependencies" : "./datasets/FindBugs/drtools-metric-cyclic-dependencies.csv"
