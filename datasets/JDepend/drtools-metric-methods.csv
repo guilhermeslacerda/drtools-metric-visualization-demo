@@ -1,0 +1,336 @@
+"method","loc","cyclo","calls","nbd","param"
+"jdepend.framework.ClassFileParser.parseNextConstant()",44,15,11,3,0
+"jdepend.framework.ClassFileParser.addAnnotationElementValueReferences(byte[] data, int index)",41,15,13,3,2
+"jdepend.textui.JDepend.instanceMain(String[] args)",46,9,15,4,1
+"jdepend.framework.ClassFileParser.toString()",53,8,26,3,0
+"jdepend.swingui.JDepend.instanceMain(String[] args)",33,7,10,4,1
+"jdepend.framework.ClassFileParser.addAnnotationsReferences()",16,7,4,3,0
+"jdepend.framework.ClassFileParser.parseAttributes()",20,6,8,3,0
+"jdepend.textui.JDepend.printCycle(JavaPackage jPackage)",31,5,14,4,1
+"jdepend.framework.DependencyConstraint.match(Collection expectedPackages)",26,5,6,4,1
+"jdepend.framework.DependencyConstraint.equalsAfferents(JavaPackage a, JavaPackage b)",19,5,10,4,2
+"jdepend.framework.DependencyConstraint.equalsEfferents(JavaPackage a, JavaPackage b)",19,5,10,4,2
+"jdepend.framework.ClassFileParser.descriptorToTypes(String descriptor)",24,5,6,3,1
+"jdepend.framework.FileManager.collectFiles(File directory, Collection files)",20,5,7,3,2
+"jdepend.framework.ClassFileParser.getPackageName(String s)",17,5,6,3,1
+"jdepend.framework.ClassFileParser.addClassConstantReferences()",14,5,9,3,0
+"jdepend.framework.JavaPackage.collectAllCycles(List list)",35,5,9,2,1
+"jdepend.framework.JavaClassBuilder.buildClasses(File file)",34,4,8,3,1
+"jdepend.swingui.DependTreeModel.getChild(Object parent, int index)",27,4,3,3,2
+"jdepend.swingui.PackageNode.getChildren()",24,4,9,3,0
+"jdepend.framework.ClassFileParser.parseConstantPool()",21,4,4,3,0
+"jdepend.framework.ClassFileParser$Constant.toString()",19,4,12,3,0
+"jdepend.framework.PropertyConfigurator.getFilteredPackages()",19,4,9,3,0
+"jdepend.framework.ClassFileParser.parseMethods()",17,4,10,3,0
+"jdepend.framework.PropertyConfigurator.getConfiguredPackages()",15,4,8,3,0
+"jdepend.framework.FileManager.acceptClassFileName(String name)",13,4,4,3,1
+"jdepend.framework.JDepend.toComponent(String packageName)",10,4,4,3,1
+"jdepend.framework.JavaPackage.collectCycle(List list)",28,4,9,2,1
+"jdepend.swingui.JDepend.createMenu(String key)",17,3,8,4,1
+"jdepend.textui.JDepend.printAfferents(JavaPackage jPackage)",16,3,11,4,1
+"jdepend.textui.JDepend.printEfferents(JavaPackage jPackage)",16,3,11,4,1
+"jdepend.swingui.JDepend.tokenize(String input)",15,3,5,4,1
+"jdepend.textui.JDepend.printAbstractClasses(JavaPackage jPackage)",14,3,9,4,1
+"jdepend.textui.JDepend.printConcreteClasses(JavaPackage jPackage)",14,3,9,4,1
+"jdepend.swingui.JDepend.createMenubar()",13,3,4,4,0
+"jdepend.framework.DependencyConstraint.matchPackage(JavaPackage expectedPackage)",12,3,3,4,1
+"jdepend.framework.PropertyConfigurator.loadProperties(File file)",30,3,3,3,1
+"jdepend.framework.JavaClassBuilder.buildClasses(JarFile file)",27,3,9,3,1
+"jdepend.swingui.DependTreeModel.getChildCount(Object parent)",24,3,2,3,1
+"jdepend.swingui.DependTreeModel.getIndexOfChild(Object parent, Object child)",20,3,2,3,2
+"jdepend.framework.JDepend.analyzeClass(JavaClass clazz)",17,3,12,3,1
+"jdepend.framework.ClassFileParser.parseAttribute()",16,3,6,3,0
+"jdepend.framework.ClassFileParser.parseFields()",15,3,9,3,0
+"jdepend.framework.ClassFileParser.addAnnotationReferences(byte[] data, int index, int numAnnotations)",15,3,7,3,3
+"jdepend.framework.ClassFileParser.parseFieldOrMethodInfo()",15,3,6,3,0
+"jdepend.framework.JDepend.containsCycles()",14,3,5,3,0
+"jdepend.swingui.DependTreeModel.addTreeModelListener(TreeModelListener l)",11,3,2,3,1
+"jdepend.framework.FileManager.addDirectory(String name)",9,3,3,3,1
+"jdepend.framework.ClassFileParser.getConstantPoolEntry(int entryIndex)",7,3,0,3,1
+"jdepend.framework.ClassFileParser.addImport(String importPackage)",4,3,3,3,1
+"jdepend.framework.PackageFilter.accept(String packageName)",16,3,5,2,1
+"jdepend.framework.JavaPackage.addAfferent(JavaPackage jPackage)",11,3,5,2,1
+"jdepend.framework.JavaPackage.getAbstractClassCount()",11,3,4,2,0
+"jdepend.framework.JavaPackage.getConcreteClassCount()",11,3,4,2,0
+"jdepend.framework.PackageFilter.addPackage(String packageName)",8,3,6,2,1
+"jdepend.framework.JavaPackage.addEfferent(JavaPackage jPackage)",6,3,5,2,1
+"jdepend.swingui.EfferentNode.isChild(JavaPackage jPackage)",19,3,2,1,1
+"jdepend.textui.JDepend.printPackage(JavaPackage jPackage)",29,2,15,4,1
+"jdepend.textui.JDepend.printSummary(Collection packages)",24,2,41,4,1
+"jdepend.swingui.JDepend.createMenuItem(String key)",23,2,11,4,1
+"jdepend.swingui.JDepend$TreeListener.valueChanged(TreeSelectionEvent te)",14,2,4,4,1
+"jdepend.swingui.JDepend.usage(String message)",12,2,5,4,1
+"jdepend.textui.JDepend.usage(String message)",12,2,5,4,1
+"jdepend.textui.JDepend.printCycles(Collection packages)",9,2,6,4,1
+"jdepend.textui.JDepend.printPackages(Collection packages)",9,2,6,4,1
+"jdepend.textui.JDepend.tab(int n)",7,2,3,4,1
+"jdepend.framework.DependencyConstraint.addPackage(String packageName)",7,2,2,4,1
+"jdepend.swingui.JDepend.getAfferentTree()",7,2,1,4,0
+"jdepend.swingui.JDepend.getEfferentTree()",7,2,1,4,0
+"jdepend.swingui.JDepend.getProgressBar()",6,2,1,4,0
+"jdepend.swingui.JDepend.getStatusField()",5,2,1,4,0
+"jdepend.swingui.JDepend.getStatusPanel()",5,2,1,4,0
+"jdepend.framework.DependencyConstraint.addPackage(JavaPackage jPackage)",4,2,3,4,1
+"jdepend.framework.ClassFileParser.parse(File classFile)",27,2,5,3,1
+"jdepend.swingui.PackageNode.toMetricsString()",24,2,36,3,0
+"jdepend.framework.JavaClassBuilder.build()",23,2,8,3,0
+"jdepend.framework.ClassFileParser.main(String args[])",22,2,7,3,1
+"jdepend.framework.ClassFileParser$FieldOrMethodInfo.toString()",21,2,14,3,0
+"jdepend.swingui.DependTreeModel.isLeaf(Object o)",17,2,1,3,1
+"jdepend.framework.JDepend.addPackage(String name)",16,2,3,3,1
+"jdepend.framework.JDepend.analyze()",15,2,6,3,0
+"jdepend.swingui.PackageNode.toString()",13,2,5,3,0
+"jdepend.framework.ClassFileParser.parseInterfaces()",12,2,6,3,0
+"jdepend.framework.JDepend.setComponents(String components)",12,2,3,3,1
+"jdepend.swingui.PackageNode.isLeaf()",12,2,2,3,0
+"jdepend.framework.JDepend.addPackages(Collection packages)",11,2,4,3,1
+"jdepend.framework.FileManager.extractFiles()",10,2,4,3,0
+"jdepend.framework.JDepend.addPackage(JavaPackage pkg)",10,2,3,3,1
+"jdepend.framework.PropertyConfigurator.getAnalyzeInnerClasses()",9,2,3,3,0
+"jdepend.framework.ClassFileParser.toUTF8(int entryIndex)",8,2,3,3,1
+"jdepend.framework.ClassFileParser.getClassConstantName(int entryIndex)",7,2,4,3,1
+"jdepend.framework.ClassFileParser.parseMagic()",7,2,1,3,0
+"jdepend.framework.JDepend.getFilter()",6,2,0,3,0
+"jdepend.framework.FileManager.acceptClassFile(File file)",5,2,3,3,1
+"jdepend.framework.JDepend.setFilter(PackageFilter filter)",5,2,1,3,1
+"jdepend.framework.FileManager.addFile(File f, Collection files)",4,2,2,3,2
+"jdepend.framework.JavaPackage.instability()",13,2,3,2,0
+"jdepend.framework.JavaPackage.abstractness()",10,2,3,2,0
+"jdepend.framework.JavaPackage.equals(Object other)",6,2,3,2,1
+"jdepend.framework.PackageFilter.addPackages(Collection packageNames)",4,2,4,2,1
+"jdepend.swingui.AfferentNode.toString()",13,2,4,1,0
+"jdepend.swingui.EfferentNode.toString()",13,2,4,1,0
+"jdepend.swingui.DependTree.valueChanged(TreeSelectionEvent te)",13,2,2,1,1
+"jdepend.framework.PackageComparator.compare(Object p1, Object p2)",10,2,5,1,2
+"jdepend.framework.AbstractParser.onParsedJavaClass(JavaClass jClass)",10,2,4,1,1
+"jdepend.framework.JavaClass.equals(Object other)",8,2,3,1,1
+"jdepend.swingui.DependTree.getTree()",6,2,1,1,0
+"jdepend.framework.AbstractParser.getFilter()",5,2,1,1,0
+"jdepend.framework.JavaClass.addImportedPackage(JavaPackage jPackage)",4,2,5,1,1
+"jdepend.framework.AbstractParser.debug(String message)",4,2,1,1,1
+"jdepend.swingui.JDepend.JDepend()",33,1,8,4,0
+"jdepend.textui.JDepend.analyze()",24,1,10,4,0
+"jdepend.swingui.JDepend.createUI()",23,1,14,4,0
+"jdepend.textui.JDepend.printStatistics(JavaPackage jPackage)",22,1,41,4,1
+"jdepend.swingui.JDepend.analyze()",18,1,8,4,0
+"jdepend.swingui.JDepend.createTreePanel()",18,1,5,4,0
+"jdepend.swingui.JDepend.createFrame(String title)",15,1,4,4,1
+"jdepend.swingui.JDepend.onParsedJavaClass(final JavaClass jClass)",13,1,1,4,1
+"jdepend.swingui.JDepend.createStatusField()",12,1,6,4,0
+"jdepend.textui.JDepend.JDepend(PrintWriter writer)",12,1,3,4,1
+"jdepend.swingui.JDepend.updateTree(ArrayList packages)",11,1,6,4,1
+"jdepend.swingui.JDepend.stopProgressMonitor()",11,1,1,4,0
+"jdepend.swingui.JDepend.addDirectory(String name)",9,1,1,4,1
+"jdepend.swingui.JDepend.startProgressMonitor(final int maxValue)",9,1,1,4,1
+"jdepend.textui.JDepend.addDirectory(String name)",9,1,1,4,1
+"jdepend.swingui.JDepend$AboutAction.actionPerformed(ActionEvent e)",8,1,3,4,1
+"jdepend.textui.JDepend.analyzeInnerClasses(boolean b)",8,1,1,4,1
+"jdepend.textui.JDepend.printCyclesHeader()",7,1,7,4,0
+"jdepend.swingui.JDepend.postStatusError(final String message)",7,1,1,4,1
+"jdepend.swingui.JDepend.postStatusMessage(final String message)",7,1,1,4,1
+"jdepend.swingui.JDepend.setFilter(PackageFilter filter)",7,1,1,4,1
+"jdepend.textui.JDepend.setFilter(PackageFilter filter)",7,1,1,4,1
+"jdepend.textui.JDepend.setWriter(PrintWriter writer)",7,1,0,4,1
+"jdepend.textui.JDepend.printPackageHeader(JavaPackage jPackage)",6,1,7,4,1
+"jdepend.swingui.JDepend$ExitAction.actionPerformed(ActionEvent e)",6,1,2,4,1
+"jdepend.swingui.JDepend.createStatusPanel()",5,1,2,4,0
+"jdepend.swingui.JDepend.setComponents(String components)",5,1,1,4,1
+"jdepend.textui.JDepend.setComponents(String components)",5,1,1,4,1
+"jdepend.swingui.JDepend.createProgressBar()",5,1,1,4,0
+"jdepend.swingui.JDepend$AboutAction.AboutAction()",5,1,0,4,0
+"jdepend.swingui.JDepend$ExitAction.ExitAction()",5,1,0,4,0
+"jdepend.textui.JDepend.JDepend()",5,1,0,4,0
+"jdepend.swingui.JDepend.showStatusError(final String message)",4,1,6,4,1
+"jdepend.swingui.JDepend.showStatusMessage(final String message)",4,1,6,4,1
+"jdepend.swingui.JDepend$TreeListener.TreeListener()",4,1,0,4,0
+"jdepend.textui.JDepend.printCycleHeader(JavaPackage jPackage)",3,1,6,4,1
+"jdepend.swingui.JDepend.display()",3,1,2,4,0
+"jdepend.textui.JDepend.printNoStats()",3,1,2,4,0
+"jdepend.textui.JDepend.printClassName(JavaClass jClass)",2,1,4,4,1
+"jdepend.textui.JDepend.printCycleContributor(JavaPackage jPackage)",2,1,4,4,1
+"jdepend.textui.JDepend.printCycleTarget(JavaPackage jPackage)",2,1,4,4,1
+"jdepend.textui.JDepend.printPackageName(JavaPackage jPackage)",2,1,4,4,1
+"jdepend.textui.JDepend.printAfferentsError()",2,1,3,4,0
+"jdepend.textui.JDepend.printEfferentsError()",2,1,3,4,0
+"jdepend.framework.DependencyConstraint.equalsDependencies(JavaPackage a, JavaPackage b)",2,1,2,4,2
+"jdepend.textui.JDepend.printAbstractClassesHeader()",2,1,2,4,0
+"jdepend.textui.JDepend.printAfferentsHeader()",2,1,2,4,0
+"jdepend.textui.JDepend.printConcreteClassesHeader()",2,1,2,4,0
+"jdepend.textui.JDepend.printEfferentsHeader()",2,1,2,4,0
+"jdepend.textui.JDepend.printSectionBreak()",2,1,2,4,0
+"jdepend.swingui.JDepend.getActionForCommand(String command)",2,1,1,4,1
+"jdepend.swingui.JDepend.main(String[] args)",2,1,1,4,1
+"jdepend.textui.JDepend.main(String args[])",2,1,1,4,1
+"jdepend.textui.JDepend.toFormattedString(float f)",2,1,1,4,1
+"jdepend.framework.DependencyConstraint.getPackages()",2,1,1,4,0
+"jdepend.textui.JDepend.printCycleFooter()",2,1,1,4,0
+"jdepend.textui.JDepend.printPackageFooter(JavaPackage jPackage)",2,1,0,4,1
+"jdepend.framework.DependencyConstraint.DependencyConstraint()",2,1,0,4,0
+"jdepend.textui.JDepend.getWriter()",2,1,0,4,0
+"jdepend.textui.JDepend.printAbstractClassesFooter()",2,1,0,4,0
+"jdepend.textui.JDepend.printAfferentsFooter()",2,1,0,4,0
+"jdepend.textui.JDepend.printConcreteClassesFooter()",2,1,0,4,0
+"jdepend.textui.JDepend.printCyclesFooter()",2,1,0,4,0
+"jdepend.textui.JDepend.printEfferentsFooter()",2,1,0,4,0
+"jdepend.textui.JDepend.printFooter()",2,1,0,4,0
+"jdepend.textui.JDepend.printHeader()",2,1,0,4,0
+"jdepend.textui.JDepend.printPackagesFooter()",2,1,0,4,0
+"jdepend.textui.JDepend.printPackagesHeader()",2,1,0,4,0
+"jdepend.textui.JDepend.tab()",2,1,0,4,0
+"jdepend.framework.ClassFileParser.parse(InputStream is)",36,1,15,3,1
+"jdepend.framework.JDepend.JDepend(PackageFilter filter)",13,1,5,3,1
+"jdepend.framework.JavaClassBuilder.countClasses()",11,1,2,3,0
+"jdepend.swingui.PackageNode.PackageNode(PackageNode parent, JavaPackage jPackage)",11,1,0,3,2
+"jdepend.framework.ClassFileParser.reset()",11,1,0,3,0
+"jdepend.framework.ClassFileParser.parseClassName()",10,1,8,3,0
+"jdepend.framework.ClassFileParser.parseAccessFlags()",10,1,3,3,0
+"jdepend.swingui.PackageNode.isChild(JavaPackage jPackage)",10,1,0,3,1
+"jdepend.framework.JDepend.dependencyMatch(DependencyConstraint constraint)",9,1,2,3,1
+"jdepend.framework.JDepend.addDirectory(String name)",9,1,1,3,1
+"jdepend.swingui.DependTreeModel.valueForPathChanged(TreePath path, Object newValue)",9,1,0,3,2
+"jdepend.swingui.PackageNode.makeNode(PackageNode parent, JavaPackage jPackage)",9,1,0,3,2
+"jdepend.swingui.DependTreeModel.DependTreeModel(PackageNode root)",9,1,0,3,1
+"jdepend.framework.ClassFileParser.parseSuperClassName()",8,1,5,3,0
+"jdepend.framework.JDepend.analyzeInnerClasses(boolean b)",8,1,1,3,1
+"jdepend.framework.JDepend.getPackage(String name)",8,1,1,3,1
+"jdepend.framework.PropertyConfigurator.PropertyConfigurator(File f)",8,1,1,3,1
+"jdepend.framework.FileManager.acceptInnerClasses(boolean b)",8,1,0,3,1
+"jdepend.framework.PropertyConfigurator.PropertyConfigurator(Properties p)",8,1,0,3,1
+"jdepend.swingui.DependTreeModel.getRoot()",8,1,0,3,0
+"jdepend.framework.JDepend.countPackages()",7,1,2,3,0
+"jdepend.framework.JDepend.addParseListener(ParserListener listener)",7,1,1,3,1
+"jdepend.swingui.DependTreeModel.removeTreeModelListener(TreeModelListener l)",7,1,1,3,1
+"jdepend.framework.JDepend.countClasses()",7,1,1,3,0
+"jdepend.framework.JDepend.getPackages()",7,1,1,3,0
+"jdepend.framework.PropertyConfigurator.PropertyConfigurator()",7,1,1,3,0
+"jdepend.swingui.PackageNode.getPackage()",7,1,0,3,0
+"jdepend.swingui.PackageNode.getParent()",7,1,0,3,0
+"jdepend.framework.ClassFileParser.addAnnotationReferences(AttributeInfo annotation)",6,1,2,3,1
+"jdepend.swingui.PackageNode.getCoupledPackages()",6,1,0,3,0
+"jdepend.framework.ClassFileParser$Constant.Constant(byte tag, int nameIndex, int typeIndex)",5,1,0,3,3
+"jdepend.framework.ClassFileParser$FieldOrMethodInfo.FieldOrMethodInfo(int accessFlags, int nameIndex, int descriptorIndex)",5,1,0,3,3
+"jdepend.framework.FileManager.existsWithExtension(File file, String extension)",3,1,4,3,2
+"jdepend.framework.ClassFileParser.ClassFileParser(PackageFilter filter)",3,1,1,3,1
+"jdepend.framework.PropertyConfigurator.getDefaultPropertyFile()",3,1,1,3,0
+"jdepend.framework.ClassFileParser$Constant.Constant(byte tag, Object value)",3,1,0,3,2
+"jdepend.framework.JavaClassBuilder.JavaClassBuilder(AbstractParser parser, FileManager fm)",3,1,0,3,2
+"jdepend.framework.FileManager.FileManager()",3,1,0,3,0
+"jdepend.framework.FileManager.acceptJarFile(File file)",2,1,3,3,1
+"jdepend.framework.FileManager.acceptFile(File file)",2,1,2,3,1
+"jdepend.framework.ClassFileParser.slashesToDots(String s)",2,1,1,3,1
+"jdepend.framework.FileManager.isJar(File file)",2,1,1,3,1
+"jdepend.framework.FileManager.isWar(File file)",2,1,1,3,1
+"jdepend.framework.FileManager.isZip(File file)",2,1,1,3,1
+"jdepend.swingui.PackageNode.format(float f)",2,1,1,3,1
+"jdepend.framework.ClassFileParser.parseMajorVersion()",2,1,1,3,0
+"jdepend.framework.ClassFileParser.parseMinorVersion()",2,1,1,3,0
+"jdepend.framework.ClassFileParser$Constant.Constant(byte tag, int nameIndex)",2,1,0,3,2
+"jdepend.framework.ClassFileParser.u2(byte[] data, int index)",2,1,0,3,2
+"jdepend.framework.ClassFileParser$AttributeInfo.setName(String name)",2,1,0,3,1
+"jdepend.framework.ClassFileParser$AttributeInfo.setValue(byte[] value)",2,1,0,3,1
+"jdepend.framework.JavaClassBuilder.JavaClassBuilder(FileManager fm)",2,1,0,3,1
+"jdepend.framework.ClassFileParser$AttributeInfo.getName()",2,1,0,3,0
+"jdepend.framework.ClassFileParser$AttributeInfo.getValue()",2,1,0,3,0
+"jdepend.framework.ClassFileParser$Constant.getNameIndex()",2,1,0,3,0
+"jdepend.framework.ClassFileParser$Constant.getTag()",2,1,0,3,0
+"jdepend.framework.ClassFileParser$Constant.getTypeIndex()",2,1,0,3,0
+"jdepend.framework.ClassFileParser$Constant.getValue()",2,1,0,3,0
+"jdepend.framework.ClassFileParser$FieldOrMethodInfo.accessFlags()",2,1,0,3,0
+"jdepend.framework.ClassFileParser$FieldOrMethodInfo.getDescriptorIndex()",2,1,0,3,0
+"jdepend.framework.ClassFileParser$FieldOrMethodInfo.getNameIndex()",2,1,0,3,0
+"jdepend.framework.ClassFileParser.ClassFileParser()",2,1,0,3,0
+"jdepend.framework.JDepend.JDepend()",2,1,0,3,0
+"jdepend.framework.JavaClassBuilder.JavaClassBuilder()",2,1,0,3,0
+"jdepend.framework.PackageFilter.PackageFilter(File f)",10,1,2,2,1
+"jdepend.framework.JavaPackage.dependsUpon(JavaPackage imported)",9,1,2,2,1
+"jdepend.framework.PackageFilter.PackageFilter()",9,1,2,2,0
+"jdepend.framework.PackageFilter.PackageFilter(Collection packageNames)",9,1,1,2,1
+"jdepend.framework.PackageFilter.getFilters()",7,1,0,2,0
+"jdepend.framework.JavaPackage.distance()",6,1,3,2,0
+"jdepend.framework.JavaPackage.JavaPackage(String name, int volatility)",6,1,1,2,2
+"jdepend.framework.JavaPackage.afferentCoupling()",5,1,1,2,0
+"jdepend.framework.JavaPackage.efferentCoupling()",5,1,1,2,0
+"jdepend.framework.JavaPackage.setVolatility(int v)",5,1,0,2,1
+"jdepend.framework.JavaPackage.getVolatility()",5,1,0,2,0
+"jdepend.framework.JavaPackage.hashCode()",2,1,2,2,0
+"jdepend.framework.JavaPackage.addClass(JavaClass clazz)",2,1,1,2,1
+"jdepend.framework.JavaPackage.containsCycle()",2,1,1,2,0
+"jdepend.framework.JavaPackage.getClassCount()",2,1,1,2,0
+"jdepend.framework.JavaPackage.JavaPackage(String name)",2,1,0,2,1
+"jdepend.framework.JavaPackage.setAfferents(Collection afferents)",2,1,0,2,1
+"jdepend.framework.JavaPackage.setEfferents(Collection efferents)",2,1,0,2,1
+"jdepend.framework.JavaPackage.getAfferents()",2,1,0,2,0
+"jdepend.framework.JavaPackage.getClasses()",2,1,0,2,0
+"jdepend.framework.JavaPackage.getEfferents()",2,1,0,2,0
+"jdepend.framework.JavaPackage.getName()",2,1,0,2,0
+"jdepend.framework.JavaPackage.toString()",2,1,0,2,0
+"jdepend.swingui.DependTree.DependTree(DependTreeModel model)",16,1,8,1,1
+"jdepend.swingui.DependTree.createTree()",15,1,5,1,0
+"jdepend.swingui.DependTree.setModel(DependTreeModel model)",10,1,6,1,1
+"jdepend.swingui.AfferentNode.makeNode(PackageNode parent, JavaPackage jPackage)",10,1,0,1,2
+"jdepend.swingui.EfferentNode.makeNode(PackageNode parent, JavaPackage jPackage)",10,1,0,1,2
+"jdepend.swingui.AfferentNode.AfferentNode(PackageNode parent, JavaPackage jPackage)",9,1,0,1,2
+"jdepend.swingui.EfferentNode.EfferentNode(PackageNode parent, JavaPackage jPackage)",9,1,0,1,2
+"jdepend.swingui.AfferentNode.getCoupledPackages()",8,1,2,1,0
+"jdepend.swingui.EfferentNode.getCoupledPackages()",8,1,2,1,0
+"jdepend.swingui.DependTree.createScrollPane()",8,1,1,1,0
+"jdepend.swingui.DependTree.addTreeSelectionListener(TreeSelectionListener l)",7,1,2,1,1
+"jdepend.swingui.DependTree.getModel()",7,1,2,1,0
+"jdepend.framework.JavaClass.JavaClass(String name)",6,1,0,1,1
+"jdepend.framework.JavaClass$ClassComparator.compare(Object a, Object b)",5,1,3,1,2
+"jdepend.swingui.DependTree.DependTree()",5,1,0,1,0
+"jdepend.framework.AbstractParser.parse(InputStream is)",4,1,0,1,1
+"jdepend.framework.AbstractParser.AbstractParser(PackageFilter filter)",3,1,1,1,1
+"jdepend.framework.JavaClass.hashCode()",2,1,2,1,0
+"jdepend.framework.AbstractParser.addParseListener(ParserListener listener)",2,1,1,1,1
+"jdepend.framework.JavaClass.getImportedPackages()",2,1,1,1,0
+"jdepend.framework.AbstractParser.setFilter(PackageFilter filter)",2,1,0,1,1
+"jdepend.framework.JavaClass.isAbstract(boolean isAbstract)",2,1,0,1,1
+"jdepend.framework.JavaClass.setName(String name)",2,1,0,1,1
+"jdepend.framework.JavaClass.setPackageName(String name)",2,1,0,1,1
+"jdepend.framework.JavaClass.setSourceFile(String name)",2,1,0,1,1
+"jdepend.framework.PackageComparator.PackageComparator(PackageComparator byWhat)",2,1,0,1,1
+"jdepend.framework.AbstractParser.AbstractParser()",2,1,0,1,0
+"jdepend.framework.JavaClass.getName()",2,1,0,1,0
+"jdepend.framework.JavaClass.getPackageName()",2,1,0,1,0
+"jdepend.framework.JavaClass.getSourceFile()",2,1,0,1,0
+"jdepend.framework.JavaClass.isAbstract()",2,1,0,1,0
+"jdepend.framework.PackageComparator.byName()",2,1,0,1,0
+"jdepend.framework.PackageComparator.byWhat()",2,1,0,1,0
+"jdepend.framework.PackageComparator.PackageComparator()",1,1,0,1,0
+"jdepend.swingui.AboutDialog.AboutDialog(JFrame parent)",58,1,30,0,1
+"jdepend.xmlui.JDepend.printStatistics(JavaPackage jPackage)",26,1,45,0,1
+"jdepend.swingui.AboutDialog.createConstraints(int x, int y)",20,1,0,0,2
+"jdepend.swingui.AboutDialog.createButton(String label)",17,1,1,0,1
+"jdepend.swingui.StatusPanel.setStatusComponent(JComponent component)",11,1,4,0,1
+"jdepend.xmlui.JDepend.JDepend(PrintWriter writer)",10,1,2,0,1
+"jdepend.xmlui.JDepend.printClassName(JavaClass jClass)",6,1,11,0,1
+"jdepend.swingui.StatusPanel.StatusPanel()",6,1,1,0,0
+"jdepend.framework.ParserListener.onParsedJavaClass(JavaClass parsedClass)",6,1,0,0,1
+"jdepend.xmlui.JDepend.main(String args[])",5,1,1,0,1
+"jdepend.xmlui.JDepend.JDepend()",5,1,0,0,0
+"jdepend.xmlui.JDepend.printPackageHeader(JavaPackage jPackage)",4,1,5,0,1
+"jdepend.xmlui.JDepend.printNoStats()",4,1,3,0,0
+"jdepend.xmlui.JDepend.printCycleContributor(JavaPackage jPackage)",3,1,4,0,1
+"jdepend.xmlui.JDepend.printCycleHeader(JavaPackage jPackage)",3,1,4,0,1
+"jdepend.xmlui.JDepend.printPackageName(JavaPackage jPackage)",3,1,4,0,1
+"jdepend.xmlui.JDepend.printCycleFooter()",3,1,4,0,0
+"jdepend.xmlui.JDepend.printCyclesHeader()",3,1,4,0,0
+"jdepend.xmlui.JDepend.printHeader()",3,1,4,0,0
+"jdepend.xmlui.JDepend.printPackageFooter(JavaPackage jPackage)",2,1,3,0,1
+"jdepend.xmlui.JDepend.printAbstractClassesFooter()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printAbstractClassesHeader()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printAfferentsFooter()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printAfferentsHeader()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printConcreteClassesFooter()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printConcreteClassesHeader()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printCyclesFooter()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printEfferentsFooter()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printEfferentsHeader()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printPackagesFooter()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printPackagesHeader()",2,1,3,0,0
+"jdepend.xmlui.JDepend.printFooter()",2,1,2,0,0
+"jdepend.xmlui.JDepend.printCycleTarget(JavaPackage jPackage)",2,1,1,0,1
+"jdepend.xmlui.JDepend.printSummary(Collection packages)",2,1,0,0,1
+"jdepend.xmlui.JDepend.printAfferentsError()",2,1,0,0,0
+"jdepend.xmlui.JDepend.printEfferentsError()",2,1,0,0,0

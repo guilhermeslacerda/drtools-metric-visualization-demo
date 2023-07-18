@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>:: drtools-metric-visualization ::</title>
+	<script type="text/javascript" src="./js/drtools/main.js" charset="UTF-8"></script>
+	<script src="./js/drtools/jquery.min.js"></script>
+ 	<script src="./js/drtools/d3.v4.js"></script>
+	<script src="./js/drtools/thermometer.min.js"></script>
+	<script src="./drtools-properties.js"></script>
+
+	<script src="./js/radar-chart.js"></script>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.5.0/pure-min.css">
+	<link rel="stylesheet" href="css/radar-chart.css">
+	<style>
+		svg {
+			border: 1px dashed #AAA;
+		}
+
+		#supercontainer {
+			display: table;
+		}
+		#boxThermometer	{ 
+			width : 100%;
+			margin: auto;
+			text-align: center;
+		}
+		#boxRadar { 
+			width: 100%;
+			left: 35%;
+			text-align: center;
+		}
+		#boxType {
+    		float: left;
+			width: 450px; height: 400px;
+			text-align: center;
+    		margin: 10px 10px;
+		}
+		#infoType {
+    		float: left;
+			width: 450px; height: 400px;
+			text-align: center;
+    		margin: 10px 10px;
+		}
+		#boxMethod {
+    		float: left;
+			width: 450px; height: 400px;
+			text-align: center;
+    		margin: 10px 10px;
+		}
+		#infoMethod {
+    		float: left;
+			width: 450px; height: 400px;
+			text-align: center;
+    		margin: 10px 10px;
+		}
+		#boxCyclo {
+    		float: left;
+			width: 450px; height: 400px;
+			text-align: center;
+    		margin: 10px 10px;
+		}
+		#infoCyclo {
+    		float: left;
+			width: 450px; height: 400px;
+			text-align: center;
+    		margin: 10px 10px;
+		}
+		#infoScale {
+			width: 100%; 
+			text-align: center;
+    		margin: 10px 10px;
+		}
+		.tooltip {
+				fill: #333333;
+		}
+	</style>
+
+</head>
+<body class="text-center">
+	<section class="ftco-section" id="headder-section">
+		<div class="col-md-12 text-center heading-section ftco-animate">
+			<h2 class="mb-4"><script>document.write(graphTitles.titleSummary)</script></h2>
+		</div>
+		<div class="col-md-12 text-center heading-section ftco-animate">
+			Project: <script>document.write(optionsProject.projectName)</script>
+		</div>
+		<div class="nav-item text-center cta mr-md-2">
+				<a href="index.html" class="nav-link"><span>Back</span></a>
+		</div>		
+		<div class="text">
+			<strong class="text-error"><div id="errorMessage"></div></strong>
+		</div>			
+	</section>
+
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/drtools/drtools-utils.js"></script>
+	  
+<div id="supercontainer">
+	<div id="boxThermometer">
+		<div id="boxType">
+			<p>
+				<h3>Types (types/namespaces)</h3>
+			</p>
+			<div id="containerType"></div>
+			<div id="infoType"></div>		
+		</div>
+		<div id="boxMethod">
+			<p>
+				<h3>Methods (methods/types)</h3>
+			</p>
+			<div id="containerMethod"></div>
+			<div id="infoMethod"></div>		
+		</div>		
+		<div id="boxCyclo">
+			<p>
+				<h3>Complexity (WMC/types)</h3>
+			</p>
+			<div id="containerCyclo"></div>
+			<div id="infoCyclo"></div>		
+		</div>
+	</div>
+	<div id="boxRadar">
+		<p>
+			<h3>Distribution of SLOC, Namespaces, Types, Methods, and Complexity
+							<div id="infoScale"></div></h3>		
+		</p>
+		<div id="radar_chart"></div>		
+	</div>
+</div>
+<script>
+if (!optionsProject.datasetSummary || 0 === optionsProject.datasetSummary.length === ''
+			|| !doesFileExist(optionsProject.datasetSummary)) {
+	$("#errorMessage").text(errorMessage.msgSummary)
+}
+else {
+
+	d3.csv(optionsProject.datasetSummary, function(data) {
+		listSummary = data.map(function(d) {
+    	return[d["description"],
+           +d["value"],
+           +d["percent"],
+			+d["median"],
+			+d["std_dev"]]
+  		});
+
+	  	var namespaces = listSummary[0][1];
+		var percentNamespaces = listSummary[0][2];
+
+	    var types = listSummary[1][1];
+		var typesPerNamespaces = listSummary[1][2];
+		var medianTypes = listSummary[1][3];
+		var stdDevTypes = listSummary[1][4].toFixed(2);
+		
+		var slocs = listSummary[2][1];
+		var slocsPerTypes = listSummary[2][2];
+		var medianSloc = listSummary[2][3];
+		var stdDevSloc = listSummary[2][4].toFixed(2);
+
+		var methods = listSummary[3][1];
+		var methodsPerTypes = listSummary[3][2];
+		var slocsPerMethods = slocs / methods;
+		var medianMethods = listSummary[3][3];
+		var stdDevMethods = listSummary[3][4].toFixed(2);
+
+		var cyclos = listSummary[4][1];
+		var cyclosPerTypes = listSummary[4][2];
+		var cyclosPerMethods = cyclos / methods;
+
+		var temperatureTypes = typesPerNamespaces > 35 ? 35 : typesPerNamespaces; 
+		var temperatureMethods = methodsPerTypes > 20 ? 20: methodsPerTypes; 
+		var temperatureCyclos = cyclosPerTypes > 40 ? 40 : cyclosPerTypes; 
+
+		var thermometer = new Thermometer();
+		var container1 = document.getElementById('containerType');
+		thermometer.render(container1, temperatureTypes, 11, 28);
+		var container2 = document.getElementById('containerMethod');
+		thermometer.render(container2, temperatureMethods, 6, 14);
+		var container3 = document.getElementById('containerCyclo');
+		thermometer.render(container3, temperatureCyclos, 11, 34);
+		
+		var infoType = d3.select("#infoType")
+			.style("font-family", "'Poppins', sans-serif")
+			.style("font-size", "14px")
+			.style("color", "#207dff")
+			.html("Total of Namespaces: " + namespaces + "<br/>Total of Types: " + types 
+					+ "<br/>Types/namespaces (average): " + typesPerNamespaces 
+					+ "<br/>(Median: " + medianTypes + " / Standard deviation: " + stdDevTypes + ")<br/>"
+					+ "Total of SLOC: " + slocs 
+					+ "<br/>(Median: " + medianSloc + " / Standard deviation: " + stdDevSloc + ")<br/>");
+		
+		var infoMethod = d3.select("#infoMethod")
+			.style("font-family", "'Poppins', sans-serif")
+			.style("font-size", "14px")
+			.style("color", "#207dff")
+			.html("Total of Methods: " + methods + "<br/>Methods/Types (average): " + methodsPerTypes
+							+ "<br/>(Median: " + medianMethods + " / Standard deviation: " + stdDevMethods 
+							+ ")<br/>SLOC/Methods (average): " + Math.round(slocsPerMethods)
+							);
+
+		var infoCyclo = d3.select("#infoCyclo")
+			.style("font-family", "'Poppins', sans-serif")
+			.style("font-size", "14px")
+			.style("color", "#207dff")
+			.html("Total of Complexity: " + cyclos + "<br/>Complexity/Types (average): " + cyclosPerTypes +
+						"<br/>Complexity/Methods (average): " + Math.round(cyclosPerMethods));	
+
+		var config = {
+			radius: 4,
+			w: 300,
+			h: 300,
+			factor: 1,
+			factorLegend: .80,
+			levels: 5,
+			maxValue: 100,
+			radians: 2 * Math.PI,
+			opacityArea: 0.6,
+			ToRight: 5,
+			TranslateX: 80,
+			TranslateY: 30,
+			ExtraWidthX: 160,
+			ExtraWidthY: 50		
+		};
+
+		var infoScale = d3.select("#infoScale")
+			.style("font-family", "'Poppins', sans-serif")
+			.style("font-size", "16px")
+			.style("color", "black")
+			.html("Scale used: " + returnFactorUsed(slocs) + " SLOC (Total SLOC/Scale)");
+
+		var perSLOC = calculateRating(slocs);
+		var perTypes = calculateRating(types);
+		var perNamespaces = typesPerNamespaces;
+		var perMethods = methodsPerTypes;
+		var perComplexity = cyclosPerTypes;
+
+		perSLOC = perSLOC > 100 ? 100: perSLOC;
+		perTypes = perTypes > 100 ? 100: perTypes;
+		perNamespaces = perNamespaces > 100 ? 100: perNamespaces;
+		perMethods = perMethods > 100 ? 100: perMethods;
+		perComplexity = perComplexity > 100 ? 100: perComplexity;
+		
+		var data = [
+			[
+			{"area": "SLOC ", "value": perSLOC},
+			{"area": "Namespaces ", "value": perNamespaces},
+			{"area": "Types", "value": perTypes},
+			{"area": "Methods ", "value": perMethods},
+			{"area": "Complexity", "value": perComplexity}
+			]
+		];
+
+		RadarChart.draw("#radar_chart", data, config);
+		var svg = d3.select('body')
+			.selectAll('svg')
+			.append('svg')
+			.style("font-family", "'Poppins', sans-serif")
+			.style("font-size", "10px")
+			.attr("width", 300)
+			.attr("height", 300);
+	});
+}
+</script>
+</body>
+</html>

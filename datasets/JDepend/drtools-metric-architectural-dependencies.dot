@@ -1,0 +1,17 @@
+digraph {
+
+node [
+style="filled",
+ fontcolor = black,
+ color = white, fontname = Poppins];
+graph [rankdir=TB],
+
+"jdepend.framework" [shape="ellipse" label="jdepend.framework" fillcolor="lightgrey"],
+"jdepend.swingui" [shape="ellipse" label="jdepend.swingui" fillcolor="lightgrey"],
+"jdepend.textui" [shape="ellipse" label="jdepend.textui" fillcolor="lightgrey"],
+"jdepend.xmlui" [shape="ellipse" label="jdepend.xmlui" fillcolor="lightgrey"],
+"jdepend.framework" -> "jdepend.framework",
+"jdepend.swingui" -> "jdepend.framework",
+"jdepend.textui" -> "jdepend.framework",
+"jdepend.xmlui" -> "jdepend.framework",
+}
